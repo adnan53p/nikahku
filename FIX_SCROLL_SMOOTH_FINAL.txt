@@ -1,0 +1,18 @@
+PERBAIKAN FINAL AUTO SCROLL SMOOTH
+
+Yang diubah:
+1. AutoScrollControl sekarang memakai requestAnimationFrame continuous cruise.
+2. Tidak lagi lompat per section. Scroll berjalan halus frame-by-frame.
+3. CSS scroll-behavior dimatikan sementara saat auto-scroll aktif supaya tidak bertabrakan.
+4. Kecepatan disetel 135px/detik: lebih terasa jalan, tidak terlalu pelan.
+5. Tombol pause/play lebih besar dan jelas.
+6. Label status tampil: AUTO SCROLL: JALAN / JEDA.
+7. Jika user scroll manual, roda mouse, touch, atau keyboard, auto-scroll otomatis berhenti.
+
+File utama:
+src/components/invitation/AutoScrollControl.tsx
+
+Kalau ingin ubah kecepatan:
+Cari: scrollSpeedPxPerSecond={135}
+Naikkan jadi 150/170 jika ingin lebih cepat.
+Turunkan jadi 100/110 jika ingin lebih pelan.

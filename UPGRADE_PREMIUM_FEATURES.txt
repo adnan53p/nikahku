@@ -1,0 +1,19 @@
+FITUR YANG SUDAH DITAMBAHKAN
+
+1. Auto Scroll Cinematic
+2. Jeda antar section
+3. Stop otomatis saat user scroll manual
+4. Smooth scroll cinematic
+5. Upgrade tampilan tombol cinematic
+6. Gallery hover zoom premium
+7. Efek glow animation
+8. Tambahan kata pembuka islami
+
+FITUR TAHAP SELANJUTNYA YANG MASIH PERLU DIBUAT MANUAL:
+
+- AI invitation generator
+- Voice narration AI
+- Multi template generator
+- Dashboard custom font lengkap
+- Dynamic particle system realtime
+- Dynamic cinematic scene editor

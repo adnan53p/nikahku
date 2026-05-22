@@ -1,0 +1,5 @@
+export { LoveStorySection } from './sections'
+export { GallerySection } from './sections'
+export { MapsSection } from './sections'
+export { GiftSection } from './sections'
+export { WishesSection } from './sections'

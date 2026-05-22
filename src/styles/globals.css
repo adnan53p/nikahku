@@ -1,0 +1,239 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── CSS Variables ─────────────────────────────────────────────────────────── */
+:root {
+  --font-playfair: Georgia, 'Times New Roman', serif;
+  --font-cormorant: Georgia, 'Times New Roman', serif;
+  --font-outfit: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --color-gold: #D4A017;
+  --color-gold-light: #E8C99A;
+  --color-champagne: #F7E7CE;
+  --color-ivory: #FAFAF8;
+  --color-elegant: #1A1A2E;
+  --color-elegant-light: #2D2D44;
+  --color-muted: #6B6B80;
+
+  --shadow-gold: 0 4px 24px rgba(212, 160, 23, 0.25);
+  --shadow-elegant: 0 4px 24px rgba(26, 26, 46, 0.12);
+  --shadow-card: 0 2px 16px rgba(26, 26, 46, 0.08);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+
+/* ─── Base Styles ───────────────────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-outfit);
+  background-color: #FAFAF8;
+  color: var(--color-elegant);
+  overflow-x: hidden;
+}
+
+/* ─── Typography ────────────────────────────────────────────────────────────── */
+.font-display { font-family: var(--font-playfair); }
+.font-body { font-family: var(--font-cormorant); }
+.font-sans { font-family: var(--font-outfit); }
+
+/* ─── Glassmorphism ─────────────────────────────────────────────────────────── */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.glass-dark {
+  background: rgba(26, 26, 46, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-gold {
+  background: rgba(247, 231, 206, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 160, 23, 0.2);
+}
+
+/* ─── Gold Effects ──────────────────────────────────────────────────────────── */
+.gold-text {
+  background: linear-gradient(135deg, #D4A017 0%, #E8C99A 50%, #B8840F 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gold-border {
+  border: 1px solid;
+  border-image: linear-gradient(135deg, #D4A017, #E8C99A, #D4A017) 1;
+}
+
+.gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(212, 160, 23, 0.15) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #F5F5F0; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #D4A017, #E8C99A);
+  border-radius: 3px;
+}
+
+/* ─── Selection ─────────────────────────────────────────────────────────────── */
+::selection {
+  background: rgba(212, 160, 23, 0.2);
+  color: var(--color-elegant);
+}
+
+/* ─── Loading Skeleton ──────────────────────────────────────────────────────── */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #F0EDE8 25%,
+    #E8E4DD 50%,
+    #F0EDE8 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* ─── Invitation Styles ─────────────────────────────────────────────────────── */
+.invitation-cover {
+  min-height: 100svh;
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 26, 46, 0.3) 0%,
+    rgba(26, 26, 46, 0.1) 50%,
+    rgba(26, 26, 46, 0.6) 100%
+  );
+}
+
+.section-divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #D4A017, transparent);
+  margin: 0 auto;
+}
+
+.ornament {
+  color: var(--color-gold);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+/* ─── Dashboard Styles ──────────────────────────────────────────────────────── */
+.sidebar-item {
+  @apply flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium
+    transition-all duration-200 cursor-pointer;
+}
+
+.sidebar-item:hover {
+  @apply bg-champagne text-elegant;
+}
+
+.sidebar-item.active {
+  @apply bg-gold-gradient text-white shadow-gold;
+}
+
+/* ─── Form Styles ───────────────────────────────────────────────────────────── */
+.input-elegant {
+  @apply w-full px-4 py-3 rounded-xl border border-champagne-dark bg-white
+    text-elegant placeholder:text-elegant/40 text-sm
+    focus:outline-none focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20
+    transition-all duration-200;
+}
+
+.label-elegant {
+  @apply text-sm font-medium text-elegant/70 mb-1.5 block;
+}
+
+/* ─── Button Styles ─────────────────────────────────────────────────────────── */
+.btn-gold {
+  @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl
+    bg-gold-gradient text-white font-medium text-sm
+    shadow-gold hover:shadow-gold-lg
+    transition-all duration-300 hover:scale-[1.02] active:scale-[0.98];
+}
+
+.btn-outline-gold {
+  @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl
+    border border-gold-500 text-gold-600 font-medium text-sm
+    hover:bg-gold-50 transition-all duration-200;
+}
+
+.btn-ghost {
+  @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg
+    text-elegant/70 font-medium text-sm hover:bg-champagne
+    transition-all duration-200;
+}
+
+/* ─── Card Styles ───────────────────────────────────────────────────────────── */
+.card-elegant {
+  @apply bg-white rounded-2xl shadow-card border border-champagne/50
+    transition-shadow duration-300 hover:shadow-card-hover;
+}
+
+/* ─── Toast Override ────────────────────────────────────────────────────────── */
+.react-hot-toast-success {
+  background: white;
+  color: var(--color-elegant);
+  border: 1px solid #E8C99A;
+  box-shadow: var(--shadow-card);
+}
+
+/* ─── Animations ────────────────────────────────────────────────────────────── */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Dark Mode ─────────────────────────────────────────────────────────────── */
+.dark {
+  --color-ivory: #1A1A2E;
+}
+
+.dark body {
+  background-color: #1A1A2E;
+  color: #F7E7CE;
+}

@@ -1,0 +1,30 @@
+FIX AUTO SCROLL TERBARU
+
+Masalah sebelumnya:
+- Tombol auto-scroll bisa tidak muncul jika auto_scroll_enabled di database bernilai false.
+- Tombol hanya terasa setelah undangan dibuka, jadi terlihat seperti tidak ada.
+- Posisi tombol kurang jelas.
+
+Perbaikan sekarang:
+1. AutoScrollControl diganti total.
+2. Tombol dibuat besar di bawah tengah layar:
+   - MULAI AUTO SCROLL
+   - JEDA AUTO SCROLL
+3. Auto-scroll dipaksa aktif di template utama:
+   - ClassicElegantTemplate
+   - IslamicLuxury
+   - PendopoSenja
+   - BlueSerenityIndonesia
+4. Scroll memakai requestAnimationFrame, bukan loncat section.
+5. Kecepatan dibuat 155px/detik agar halus tapi tidak terlalu pelan.
+6. Ada indikator status: SCROLL HALUS SEDANG JALAN / TEKAN UNTUK PLAY.
+
+Cara cek:
+1. npm install
+2. npm run dev
+3. Buka undangan
+4. Klik Buka Undangan
+5. Tombol MULAI/JEDA AUTO SCROLL akan tampil di bawah tengah layar.
+
+Catatan:
+Tombol muncul setelah undangan dibuka, karena cover fullscreen menutup halaman utama.

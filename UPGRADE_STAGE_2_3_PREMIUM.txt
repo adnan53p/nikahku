@@ -1,0 +1,29 @@
+UPDATE TAHAP 2 DAN TAHAP 3 SUDAH DITAMBAHKAN
+
+FITUR BARU:
+1. Dashboard edit semua teks: /admin/premium-editor
+2. Custom warna: warna utama, background, aksen
+3. Custom font heading dan body
+4. Particle system: gold dust, sparkle, flower, hearts
+5. Multi template tambahan: Royal Garden, Modern Minimal, Cinematic Gold
+6. AI invitation generator sederhana berbasis template teks
+7. Voice narration memakai Web Speech API browser
+8. Cinematic mode memakai auto scroll yang sudah dibuat sebelumnya
+9. Galeri bergerak dengan efek zoom hover
+
+LANGKAH WAJIB:
+1. Extract ZIP
+2. Jalankan npm install
+3. Buka Supabase SQL Editor
+4. Jalankan file:
+   supabase-stage-2-3-premium-features.sql
+5. Jalankan:
+   npm run dev
+6. Buka:
+   http://localhost:3000/admin/premium-editor
+
+CATATAN:
+- AI invitation generator di versi ini masih berupa generator teks template lokal, belum tersambung ke OpenAI API.
+- Voice narration memakai fitur bawaan browser, jadi tidak butuh API tambahan.
+- Multi template tambahan memakai engine ClassicElegantTemplate dengan warna/font/partikel dinamis.
+- Untuk AI generator sungguhan, nanti perlu API route dan API key.

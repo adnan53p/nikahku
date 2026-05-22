@@ -1,0 +1,49 @@
+UPGRADE SELESAI — ISLAMIC GOLD CINEMATIC
+
+Yang ditambahkan/diperbaiki:
+1. Simpan edit langsung ke Supabase
+   - Nama pengantin
+   - Nama orang tua
+   - Venue
+   - Alamat venue
+   - Cover
+   - Foto mempelai
+   - Layout drag/resize ke premium_settings_json
+
+2. Simpan posisi drag/resize layout
+   - Data disimpan di kolom events.premium_settings_json dengan key islamicLuxuryLayout.
+
+3. Upload/ganti foto langsung
+   - Cover: tombol Ganti Cover di mode edit
+   - Foto mempelai: tombol Ganti di foto pria/wanita
+   - Gallery: tombol Tambah/Ganti Foto Gallery
+   - Upload masuk ke Supabase Storage bucket: events
+
+4. Font Google dihapus
+   - next/font/google di src/app/layout.tsx sudah dilepas.
+   - @import fonts.googleapis.com di globals.css dan IslamicLuxury.tsx dihapus.
+   - Build tidak lagi bergantung ke akses fonts.googleapis.com.
+
+5. Dashboard tersambung ke editor template aktif
+   - Di halaman detail undangan ada tombol "Editor Template Aktif".
+   - Link membuka /u/[slug]?edit=1.
+   - Tombol edit tidak muncul untuk tamu biasa; hanya muncul saat URL memakai ?edit=1.
+
+6. Auto-scroll dibuat lebih cepat dan tetap halus
+   - Durasi scroll: 2.6 detik per section.
+   - Jeda section: 0.9 detik.
+   - Tombol pause/play tetap ada di kiri bawah.
+   - Saat start dari atas, auto-scroll langsung menuju section berikutnya, tidak menunggu lama di hero.
+
+WAJIB DI SUPABASE:
+Jalankan file SQL ini bila upload belum bisa:
+supabase-islamic-live-editor-upgrade.sql
+
+TES LOKAL:
+npm install
+npm run type-check
+npm run dev
+
+Catatan tes:
+- npm run type-check sudah berhasil di environment ini.
+- npm run build sempat berjalan sampai proses "Creating an optimized production build", namun tidak selesai sebelum batas waktu sandbox. Error Google Fonts sebelumnya sudah dihilangkan dari kode.

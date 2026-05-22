@@ -1,0 +1,24 @@
+PERBAIKAN AUTO SCROLL
+
+Masalah sebelumnya:
+- Auto scroll mengikuti data event.auto_scroll_enabled dari Supabase.
+- Jika kolom belum ada / nilainya kosong / false, fitur terlihat sama seperti sebelumnya.
+
+Yang sudah diperbaiki:
+- Auto scroll sekarang otomatis aktif setelah undangan dibuka.
+- Tetap ada tombol pause/play di kiri bawah.
+- Auto scroll berhenti jika tamu scroll manual, sentuh layar, atau tekan keyboard.
+- Jeda tiap section sekitar 5,2 detik.
+- Jika ingin mematikan dari database, isi auto_scroll_enabled = false.
+
+Cara cek:
+1. Jalankan npm run dev
+2. Buka halaman undangan
+3. Klik tombol Buka Undangan
+4. Tunggu sekitar 2 detik
+5. Halaman akan scroll otomatis antar section
+
+Jika belum bergerak:
+- Pastikan membuka undangan dari tombol cover, bukan langsung bagian tengah halaman.
+- Hard refresh browser: CTRL + F5
+- Stop terminal lalu npm run dev ulang.

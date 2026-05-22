@@ -1,0 +1,25 @@
+PERBAIKAN AUTO SCROLL SEMUA TEMPLATE
+
+Sudah diperbaiki:
+1. ClassicElegantTemplate
+2. IslamicLuxury
+3. PendopoSenja
+4. BlueSerenityIndonesia
+
+Cara tes:
+1. npm install
+2. npm run dev
+3. Buka halaman undangan, contoh:
+   http://localhost:3000/u/adul-muhadul
+4. Klik tombol Buka Undangan
+5. Tunggu 2 detik
+6. Auto scroll akan berjalan otomatis
+
+Tombol auto scroll:
+- Ada di kiri bawah
+- Icon Play = mulai auto scroll
+- Icon Pause = auto scroll sedang berjalan
+- Jika tamu scroll manual, auto scroll berhenti otomatis
+
+Catatan:
+Jika tidak bergerak, tekan tombol Play di kiri bawah.

@@ -1,0 +1,16 @@
+AUTO SCROLL HALUS CINEMATIC
+
+Perbaikan:
+- Tidak lagi memakai scrollIntoView bawaan browser yang terasa loncat.
+- Sekarang memakai requestAnimationFrame.
+- Scroll berjalan pelan selama ±5,2 detik.
+- Setelah sampai section, berhenti/jeda ±1,8 detik.
+- Jika tamu scroll manual, auto scroll berhenti.
+
+Cara tes:
+1. npm install
+2. npm run dev
+3. Buka halaman undangan
+4. Klik Buka Undangan
+5. Tunggu ±2 detik
+6. Scroll akan bergerak pelan cinematic
